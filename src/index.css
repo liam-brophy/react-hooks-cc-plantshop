@@ -21,11 +21,32 @@ button {
   font-family: inherit;
   border: none;
   cursor: pointer;
+  border-radius:20px
 }
 
 button.primary {
   background-color: var(--green);
   color: white;
+}
+
+button.bonusButton {
+  margin-left: 5px;
+  padding: 0.25rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background-color: var(--pink);
+  opacity: 50%
+}
+
+button.bonusButton: hover {
+  margin-left: 5px;
+  padding: 0.25rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background-color: var(--pink);
+  opacity: 100%
 }
 
 .app {
@@ -34,6 +55,7 @@ button.primary {
 }
 
 header h1 {
+  font-family: "Helvetica", sans-serif;
   font-size: 2.5em;
   font-weight: 900;
   text-align: center;
@@ -49,12 +71,15 @@ header h1 {
 
 main {
   padding: 0 1rem;
+  
 }
 
 .new-plant-form {
   padding: 2rem 1rem;
   margin: 2rem 0;
   background-color: rgba(181, 250, 181, 0.5);
+  font-family: "Helvetica", sans-serif;
+  border-radius:20px
 }
 
 .new-plant-form form {
