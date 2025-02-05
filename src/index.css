@@ -38,7 +38,7 @@ button.bonusButton {
   background-color: var(--pink);
   opacity: 50%
 }
-
+/* 
 button.bonusButton: hover {
   margin-left: 5px;
   padding: 0.25rem;
@@ -47,7 +47,7 @@ button.bonusButton: hover {
   cursor: pointer;
   background-color: var(--pink);
   opacity: 100%
-}
+} */
 
 .app {
   margin: 0 auto;

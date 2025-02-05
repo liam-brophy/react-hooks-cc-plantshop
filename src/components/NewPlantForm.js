@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-function NewPlantForm({onPlantFormSubmit, editingPlant, resetEditingPlant}) {
+function NewPlantForm({ onPlantFormSubmit, editingPlant, resetEditingPlant }) {
   const [plantName, setPlantName] = useState("");
   const [plantImage, setPlantImage] = useState("");
   const [plantPrice, setPlantPrice] = useState("");
-  
+
 
   useEffect(() => { //if editing a plant, have the form start with the existing values
     if (editingPlant) {
@@ -24,13 +24,13 @@ function NewPlantForm({onPlantFormSubmit, editingPlant, resetEditingPlant}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const updatedPlant = {
       name: plantName,
       image: plantImage,
       price: plantPrice,
     };
-  
+
     try {
       let response;
       if (editingPlant) {
@@ -62,19 +62,19 @@ function NewPlantForm({onPlantFormSubmit, editingPlant, resetEditingPlant}) {
         throw new Error(editingPlant ? "Failed to update the plant" : "Failed to add the plant");
       }
     } catch (error) {
-      // console.error("Error:", error);
-      // alert("Something went wrong.");
+      console.error("Error:", error);
+      alert("Something went wrong.");
     }
   };
 
 
   return (
-    <div className="new-plant-form" onSubmit={handleSubmit}> 
+    <div className="new-plant-form" onSubmit={handleSubmit}>
       <h2>New Plant</h2>
       <form>
-        <input type="text" name="name" placeholder="Plant name" value={plantName} 
+        <input type="text" name="name" placeholder="Plant name" value={plantName}
           onChange={(e) => setPlantName(e.target.value)} />
-        <input type="text" name="image" placeholder="Image URL" value={plantImage} 
+        <input type="text" name="image" placeholder="Image URL" value={plantImage}
           onChange={(e) => setPlantImage(e.target.value)} />
         <input type="number" name="price" step="0.01" placeholder="Price" value={plantPrice}
           onChange={(e) => setPlantPrice(e.target.value)} />
